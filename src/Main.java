@@ -19,6 +19,11 @@ class Main {
         System.out.println("s");
 
         Scanner scanner = new Scanner(System.in);
+        if (scanner.nextLine().equals("Hello!")) {
+            System.out.println("Hi!");
+        } else {
+            System.out.println("Hello!");
+        }
         while (true) {
             String nextLine = scanner.nextLine();
             System.out.println(nextLine);
