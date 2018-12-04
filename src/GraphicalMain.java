@@ -4,8 +4,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class GraphicalMain {
+    static int roundNumber = 0;
+
     public static void main(String[] args) {
-        JFrame jFrame = new JFrame("My Super Program!!!"){
+        JFrame jFrame = new JFrame("My Super Program!!!") {
             @Override
             public void paint(Graphics g) {
                 super.paint(g);
@@ -14,15 +16,46 @@ public class GraphicalMain {
                     g.drawOval(20 + (10 + 50) * i, 80, 50, 50);
                     g.fillOval(30 + (10 + 50) * i, 100, 10, 10);
                     g.fillOval(50 + (10 + 50) * i, 110, 12, 12);
-                    g.fillOval( 50 + (10 + 50) * i, 90, 13, 13);
-                    g.fillOval( 30 + (10 + 50) * i, 85, 14, 12);
+                    g.fillOval(50 + (10 + 50) * i, 90, 13, 13);
+                    g.fillOval(30 + (10 + 50) * i, 85, 14, 12);
                     g.drawOval(20 + (10 + 50) * i, 180, 50, 50);
+                    g.setColor(Color.RED);
+                    g.fillOval(30 + (10 + 50) * roundNumber, 190, 14, 12);
+                    g.setColor(Color.BLACK);
                 }
             }
         };
         jFrame.setSize(400, 300);
         jFrame.setLocation(500, 200);
 
+        jFrame.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                roundNumber++;
+                roundNumber %= 6;
+                jFrame.repaint();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
        /* jFrame.setLayout(null);
         JLabel jLabel = new JLabel("My Super Label");
         jLabel.setLocation(10, 10);
