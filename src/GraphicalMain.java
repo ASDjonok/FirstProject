@@ -19,7 +19,7 @@ public class GraphicalMain {
                     g.fillOval(50 + (10 + 50) * i, 90, 13, 13);
                     g.fillOval(30 + (10 + 50) * i, 85, 14, 12);
                     g.drawOval(20 + (10 + 50) * i, 180, 50, 50);
-                    g.setColor(Color.RED);
+                    g.setColor(new Color(0,100,10));
                     g.fillOval(30 + (10 + 50) * roundNumber, 190, 14, 12);
                     g.setColor(Color.BLACK);
                 }
@@ -34,6 +34,8 @@ public class GraphicalMain {
                 roundNumber++;
                 roundNumber %= 6;
                 jFrame.repaint();
+
+                System.out.println("x = " + e.getX() + ", y = " + e.getY());
             }
 
             @Override
