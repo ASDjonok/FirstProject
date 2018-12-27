@@ -50,19 +50,19 @@ public class GraphicalMain {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-
+                System.out.println("PRIVET!!!!");
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-
+                System.out.println("TU KYDA????");
             }
         });
-       /* jFrame.setLayout(null);
+        /*jFrame.setLayout(null);
         JLabel jLabel = new JLabel("My Super Label");
         jLabel.setLocation(10, 10);
         jLabel.setSize(100, 20);
-        jFrame.add(jLabel*//*, BorderLayout.NORTH*//*);
+        jFrame.add(jLabel, BorderLayout.NORTH);
 
         JTextField jTextField = new JTextField();
         jTextField.setSize(160, 40);
@@ -73,8 +73,10 @@ public class GraphicalMain {
         jButton.setSize(160, 40);
         jButton.setLocation(30, 40);
         jFrame.add(jButton);
-        jButton.addActionListener(e -> jLabel.setText(jTextField.getText()));
-*/
+        jButton.addActionListener(e -> jLabel.setText(jTextField.getText()));*/
+
+
+
         jFrame.setVisible(true);
 
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
