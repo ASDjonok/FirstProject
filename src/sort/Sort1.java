@@ -5,9 +5,10 @@ import java.util.Arrays;
 public class Sort1 {
     public static void main(String[] args) {
         int[][] Z = {
-                {3, -4, 2},
-                {3, 4, -5},
-                {-3, 4, 6}
+                {3, -4, 2, 1, -4, 2, 1},
+                {3, 4, -5, 1, 4, -5, 1},
+                {3, -4, -5, 1, -4, -5, 1},
+                {-3, 4, 6, 1, 4, 6, 1}
         };
 
         System.out.println("Матриця Z до перетворень:");

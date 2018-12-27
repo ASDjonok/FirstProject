@@ -1,6 +1,6 @@
 package sort;
 
-public class Sort2 {
+public class Sort3 {
     public static void main(String[] args) {
         int[][] Z = {
                 {3, -4, 2, 1, -4, 2, 1, 4, 6, -1, 4, -6, 1},
@@ -21,16 +21,29 @@ public class Sort2 {
 
         int moveCount = 0;
         for (int i = 1; i < Z.length; i+=2) {
-            for (int j = 1; j < Z[i].length; j++) {
-                int x = Z[i][j];
-                int k = j;
-                while (k > 0 && Z[i][k-1] > x) {
-                    Z[i][k] = Z[i][k-1];
-                    k--;
-                    moveCount++;
+            int buff;
+            int left=0;
+            int right=Z[i].length-1;
+            do {
+                for (int j=left; j<right;j++) {
+                    if (Z[i][j]>Z[i][j+1]) {
+                        buff = Z[i][j];
+                        Z[i][j] = Z[i][j + 1];
+                        Z[i][j + 1] = buff;
+                        moveCount++;
+                    }
                 }
-                Z[i][k] = x;
-            }
+                right--;
+                for (int j=right; j>left; j--) {
+                    if (Z[i][j]<Z[i][j-1]) {
+                        buff = Z[i][j];
+                        Z[i][j] = Z[i][j - 1];
+                        Z[i][j - 1] = buff;
+                        moveCount++;
+                    }
+                }
+                left++;
+            } while (left <right);
         }
 
         System.out.println("Матриця Z після перетворень:");
