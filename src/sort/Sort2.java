@@ -1,8 +1,6 @@
 package sort;
 
-import java.util.Arrays;
-
-public class Sort1 {
+public class Sort2 {
     public static void main(String[] args) {
         int[][] Z = {
                 {3, -4, 2},
@@ -20,17 +18,15 @@ public class Sort1 {
 
         int moveCount = 0;
         for (int i = 1; i < Z.length; i+=2) {
-            for (int min = 0; min < Z[i].length - 1; min++) {
-                int least = min;
-                for (int j = min + 1; j < Z[i].length; j++) {
-                    if (Z[i][j] < Z[i][least]) {
-                        least = j;
-                    }
+            for (int j = 1; j < Z[i].length; j++) {
+                int x = Z[i][j];
+                int k = j;
+                while (k > 0 && Z[i][k-1] > x) {
+                    Z[i][k] = Z[i][k-1];
+                    k--;
+                    moveCount++;
                 }
-                int tmp = Z[i][min];
-                Z[i][min] = Z[i][least];
-                Z[i][least] = tmp;
-                moveCount++;
+                Z[i][k] = x;
             }
         }
 
